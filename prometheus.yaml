@@ -1,0 +1,10 @@
+global:
+  scrape_interval: 15s # Default is every 1 minute.
+
+scrape_configs:
+  - job_name: 'prom_pushgateway'
+    # metrics_path defaults to '/metrics'
+    # scheme defaults to 'http'.
+    static_configs:
+      - targets:
+        - prom_pushgateway:9091 # docker container name 
