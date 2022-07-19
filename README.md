@@ -50,3 +50,41 @@ Give Kibana about a minute to initialize, then access the Kibana web UI by openi
 Upon the initial startup, the elastic, logstash_internal and kibana_system Elasticsearch users are intialized with the values of the passwords defined in the .env file ("changeme" by default). The first one is the built-in superuser, the other two are used by Kibana and Logstash respectively to communicate with Elasticsearch. This task is only performed during the initial startup of the stack. To change users' passwords after they have been initialized, please refer to the instructions by [devianthony](https://github.com/deviantony/docker-elk#initial-setup).
 
 ### Metrics and Traces
+
+To access the Grafana web UI open http://localhost:5601 in a web browser and use the following (default) credentials to log in:
+
+- user: admin
+- password: admin
+
+Upon the initial log in, Grafana will prompt you to change the password.
+
+## Visualizing the data
+
+The data visualization is done in Kibana for the logs and Grafana for metrics and traces. Here are some example visualizations in both [Grafana](https://grafana.com/docs/grafana/latest/dashboards/) and [Kibana](https://www.elastic.co/guide/en/kibana/current/dashboard.html). For further information please refer to the official documentation.
+
+### Kibana
+
+Access the Kibana web UI, navigate to `Analytics/Discover` and follow the instructions to setup your first log visualization.
+
+Image placeholder
+<br>
+
+### Grafana
+
+After logging in, the data sources need to be added. In the menu on the left navigate to `Configuration (Wheel Icon)/ Data Sources`. From there you should be able to add the data sources, in our case those would be Zipkin and Prometheus. Here's what Grafana should look like after adding the sources:
+
+Image placeholder
+<br>
+
+And here is an example dashboard:
+
+Image placeholder
+<br>
+
+## Contributing
+
+Contributions to this project are welcome.
+
+## License
+
+This project is licensed under the MIT License. See [License](https://github.com/snkirov/seeker-docker-example/blob/master/LICENSE) for more information.
