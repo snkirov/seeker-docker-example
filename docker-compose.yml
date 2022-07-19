@@ -10,6 +10,7 @@ services:
   # subsequent runs, the service simply returns immediately, without performing
   # any modification to existing users.
   setup:
+    container_name: elk_setup
     build:
       context: setup/
       args:
@@ -27,6 +28,7 @@ services:
       - elasticsearch
 
   elasticsearch:
+    container_name: elasticsearch
     build:
       context: elasticsearch/
       args:
@@ -50,6 +52,7 @@ services:
       - elk
 
   logstash:
+    container_name: logstash
     build:
       context: logstash/
       args:
@@ -71,6 +74,7 @@ services:
       - elasticsearch
 
   kibana:
+    container_name: kibana
     build:
       context: kibana/
       args:
@@ -88,6 +92,7 @@ services:
       
   # Collector
   collector:
+    container_name: otel_collector
     image: otel/opentelemetry-collector:0.50.0
 #    image: otel/opentelemetry-collector:latest
     command: ["--config=/conf/collector-config.yaml"]
@@ -102,6 +107,7 @@ services:
 
   # Zipkin
   zipkin:
+    container_name: zipkin
     image: openzipkin/zipkin:latest
     ports:
       - "9411:9411"
