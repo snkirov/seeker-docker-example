@@ -1,11 +1,16 @@
 # Elastic Stack (ELK), Grafana, Prometheus and Zipkin on Docker
 
-ELK portion created by [devianthony](https://github.com/deviantony/docker-elk).
+This repository showcases an example docker setup for the [Seeker Swift Package](https://github.com/snkirov/seeker).
 
-Run a fully functional observability backend using the ELK-Stack, Grafana, Prometheus and Zipkin using Docker. 
-<br>
-<br>
+If you need a working example of the package, which can upload data to this docker setup see [Seeker Swift Examples](https://github.com/snkirov/seeker-swift-examples).
+
+## Description
+
+Run a fully functional observability server using the ELK-Stack, Grafana, Prometheus and Zipkin on Docker. 
+
 It handles the collection and visualization of observability data - logs, metrics and traces.
+
+ELK portion inspired by [devianthony](https://github.com/deviantony/docker-elk).
 
 ## Usage 
 
